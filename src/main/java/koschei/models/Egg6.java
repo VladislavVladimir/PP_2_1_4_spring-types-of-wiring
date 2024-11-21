@@ -1,7 +1,7 @@
 package koschei.models;
 
 public class Egg6 {
-    Needle7 needle;
+    private Needle7 needle;
 
     public Egg6(Needle7 needle) {
         this.needle = needle;

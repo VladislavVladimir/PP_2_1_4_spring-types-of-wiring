@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Random;
+
 @Configuration
 @ComponentScan(basePackages = "koschei")
 public class AppConfig {
@@ -19,5 +21,20 @@ public class AppConfig {
         return new Egg6(needle);
     }
 
-    @Bean Deth8 getDeth8() { return new Deth8(); }
+    @Bean
+    Deth8 getDeth8() {
+        String[] lastWords = {
+                "Твоя победа — лишь мимолетная иллюзия!",
+                "Ты не сможешь избавиться от моего проклятия!",
+                "О, нет! Ты не достоин победы!",
+                "Как ты смеешь радоваться моей гибели?",
+                "Я отомщу тебе на том свете!",
+                "Может, я падаю, но ты тоже отправишься со мной.",
+                "Я вернусь, и тогда тебе не поздоровится!",
+                "Моя ненависть будет жить после меня!"
+        };
+
+        Random random = new Random();
+        return new Deth8(lastWords[random.nextInt(lastWords.length)]);
+    }
 }
